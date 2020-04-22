@@ -7,7 +7,7 @@ import TodoItem from "./components/TodoItem";
 
 function App() {
   return (
-    <div className="bg-success">
+    <div className="bg-dark">
       <TodoInput></TodoInput>
       <TodoList></TodoList>
       <TodoItem></TodoItem>
