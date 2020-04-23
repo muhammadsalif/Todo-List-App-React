@@ -4,14 +4,11 @@ import React, { Component } from "react";
 import uuid from "react-uuid";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TodoInput from "./components/TodoInput";
-import TodoList from "./components/TodoList";
+// import TodoList from "./components/TodoList";
 
 class App extends Component {
   state = {
-    items: [
-      { id: 1, title: "Wake Up" },
-      { id: 2, title: "Make Breakfast" },
-    ],
+    items: [],
     id: uuid(),
     item: "",
     editItem: false,
@@ -22,7 +19,21 @@ class App extends Component {
   };
 
   handleSubmit = (e) => {
-    console.log("Handle Submit");
+    e.preventDefault();
+    const newItem = {
+      id: this.state.id,
+      title: this.state.item,
+    };
+    const updatedItem = [...this.state.items, newItem];
+    this.setState(
+      {
+        items: updatedItem,
+        item: "",
+        id: uuid(),
+        editItem: false,
+      },
+      () => console.log(this.state)
+    );
   };
 
   clearList = (e) => {
