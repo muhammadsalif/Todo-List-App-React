@@ -18,7 +18,7 @@ class App extends Component {
   };
 
   handleChange = (e) => {
-    console.log("Handle Change");
+    this.setState({ item: e.target.value });
   };
 
   handleSubmit = (e) => {
@@ -49,12 +49,12 @@ class App extends Component {
               handleSubmit={this.handleSubmit}
               editItem={this.editItem}
             ></TodoInput>
-            <TodoList
+            {/* <TodoList
               items={this.state.items}
               clearList={this.clearList}
               handleEdit={this.handleEdit}
               handleDelete={this.handleDelete}
-            ></TodoList>
+            ></TodoList> */}
           </div>
         </div>
       </div>
