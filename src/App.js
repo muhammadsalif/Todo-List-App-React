@@ -45,7 +45,7 @@ class App extends Component {
   };
 
   handleDelete = (id) => {
-    console.log(`Handle edit ${id}`);
+    console.log(`Handle delete ${id}`);
   };
 
   render() {
