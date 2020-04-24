@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import uuid from "react-uuid";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TodoInput from "./components/TodoInput";
-// import TodoList from "./components/TodoList";
+import TodoList from "./components/TodoList";
 
 class App extends Component {
   state = {
@@ -60,12 +60,12 @@ class App extends Component {
               handleSubmit={this.handleSubmit}
               editItem={this.editItem}
             ></TodoInput>
-            {/* <TodoList
+            <TodoList
               items={this.state.items}
               clearList={this.clearList}
               handleEdit={this.handleEdit}
               handleDelete={this.handleDelete}
-            ></TodoList> */}
+            ></TodoList>
           </div>
         </div>
       </div>
