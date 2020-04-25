@@ -38,7 +38,14 @@ class App extends Component {
   };
 
   handleEdit = (id) => {
-    console.log(`Handle edit ${id}`);
+    const filteredItems = this.state.items.filter((item) => item.id != id);
+    const selectedItem = this.state.items.find((item) => item.id === id);
+    this.setState({
+      item: selectedItem.title,
+      items: filteredItems,
+      id: id,
+      editItem: true,
+    });
   };
 
   handleDelete = (id) => {
@@ -49,9 +56,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container border border-dark">
+      <div className="container ">
         <div className="row">
-          <div className="col-10 mx-auto col-md-8 mt-5 text-center border border-dark ">
+          <div className="col-10 mx-auto col-md-8 mt-5 text-center">
             <h3 className="text-capitalize">todo input</h3>
             <TodoInput
               item={this.state.item}

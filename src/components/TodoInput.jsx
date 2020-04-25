@@ -4,7 +4,7 @@ class TodoInput extends Component {
   render() {
     const { item, handleChange, handleSubmit, editItem } = this.props;
     return (
-      <div className="card border-warning card-body my-3">
+      <div className="card card-body my-3">
         <form onSubmit={handleSubmit}>
           <div className="input-group ">
             <div className="input-group-prepend ">
@@ -20,8 +20,16 @@ class TodoInput extends Component {
               onChange={handleChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary mt-3 btn-block">
-            add item
+          <button
+            type="submit"
+            disabled={item ? false : true}
+            className={
+              editItem
+                ? "btn btn-success mt-3 btn-block"
+                : "btn btn-primary mt-3 btn-block"
+            }
+          >
+            {editItem ? "edit item" : "add item"}
           </button>
         </form>
       </div>
