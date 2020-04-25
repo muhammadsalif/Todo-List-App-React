@@ -25,19 +25,16 @@ class App extends Component {
       title: this.state.item,
     };
     const updatedItem = [...this.state.items, newItem];
-    this.setState(
-      {
-        items: updatedItem,
-        item: "",
-        id: uuid(),
-        editItem: false,
-      },
-      () => console.log(this.state)
-    );
+    this.setState({
+      items: updatedItem,
+      item: "",
+      id: uuid(),
+      editItem: false,
+    });
   };
 
-  clearList = (e) => {
-    console.log("ClearList");
+  clearList = () => {
+    this.setState({ items: [] });
   };
 
   handleEdit = (id) => {
@@ -45,7 +42,9 @@ class App extends Component {
   };
 
   handleDelete = (id) => {
-    console.log(`Handle delete ${id}`);
+    //Here item is saying hey boy do you have the same id which is clicked if yes then don't gonna save it to the new const except all gonna save in the filteredItems.
+    const filteredItems = this.state.items.filter((item) => item.id !== id);
+    this.setState({ items: filteredItems });
   };
 
   render() {

@@ -18,7 +18,10 @@ class TodoList extends Component {
           );
         })}
 
-        <button className="btn btn-danger btn-block text-capitalize text-center mt-3">
+        <button
+          className="btn btn-danger btn-block text-capitalize text-center mt-3"
+          onClick={clearList}
+        >
           clear list
         </button>
       </ul>
