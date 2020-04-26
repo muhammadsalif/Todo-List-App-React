@@ -24,7 +24,7 @@ class TodoInput extends Component {
             type="submit"
             disabled={item ? false : true}
             className={
-              editItem
+              editItem === true
                 ? "btn btn-success mt-3 btn-block"
                 : "btn btn-primary mt-3 btn-block"
             }
